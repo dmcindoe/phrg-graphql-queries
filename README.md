@@ -8,12 +8,74 @@ Utilize the "Docs" tab on the far right of the page to figure out the query you 
 
 ### Questions
 
-1. What is the height of Nidoqueen?
-1. What are the weaknesses of Machop?
-1. What is Ditto's special attack stat?
-1. What is the official classification of Snorlax? (egg group is fine)
+1. What is the height of Nidoqueen? "height": 1.3,
+{
+	getPokemon(pokemon: nidoqueen reverseFlavorTexts: true takeFlavorTexts: 1) {
+		height
+	}
+}
+1. What are the weaknesses of Machop? Flying, Psychic
+
+1. What is Ditto's special attack stat? specialattack": 48
+{
+	getPokemon(pokemon: ditto reverseFlavorTexts: true takeFlavorTexts: 1) {
+		num
+		species
+		baseStats { specialattack }
+	}
+}
+1. What is the official classification of Snorlax? (egg group is fine) "Monster"
+
+	getPokemon(pokemon: snorlax reverseFlavorTexts: true takeFlavorTexts: 1) {
+	eggGroups
+	}
+}
+
 1. What is Dragonite resitant to? (bonus points for double resistance as well!)
-1. What is the catch rate of Pidgeot?
-1. What is Pikachu's weight AFTER they evolve?
-1. What is Pikachu's hidden ability?
-1. Where can an image of Jigglepuff be found?
+1. What is the catch rate of Pidgeot? base:45
+   {
+	getPokemon(pokemon: pidgeot reverseFlavorTexts: true takeFlavorTexts: 1){
+    catchRate {
+       base
+    }
+  }
+}
+
+1. What is Pikachu's weight AFTER they evolve? "weight": 30
+{
+	getPokemon(pokemon: raichu reverseFlavorTexts: true takeFlavorTexts: 1) {
+		height
+		weight
+	}
+}
+
+
+1. What is Pikachu's hidden ability? "lightening Rod"
+{
+	getPokemon(pokemon: pikachu reverseFlavorTexts: true takeFlavorTexts: 1) {
+		abilities { hidden }
+	}
+}
+1. Where can an image of Jigglepuff be found? See below query code for result
+{
+	getPokemon(pokemon: jigglypuff reverseFlavorTexts: true takeFlavorTexts: 1) {
+	
+		sprite
+		shinySprite
+		backSprite
+		shinyBackSprite
+
+	}
+}
+
+answer: 
+{
+  "data": {
+    "getPokemon": {
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/jigglypuff.gif",
+      "shinySprite": "https://play.pokemonshowdown.com/sprites/ani-shiny/jigglypuff.gif",
+      "backSprite": "https://play.pokemonshowdown.com/sprites/ani-back/jigglypuff.gif",
+      "shinyBackSprite": "https://play.pokemonshowdown.com/sprites/ani-back-shiny/jigglypuff.gif"
+    }
+  }
+}
