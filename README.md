@@ -14,7 +14,15 @@ Utilize the "Docs" tab on the far right of the page to figure out the query you 
 		height
 	}
 }
-1. What are the weaknesses of Machop? Flying, Psychic
+1. What are the weaknesses of Machop? "fairy","flying","psychic"
+
+{
+	getTypeMatchup(types: [fighting]) {
+		defending{
+     effectiveTypes
+    }
+	}
+}
 
 1. What is Ditto's special attack stat? specialattack": 48
 {
@@ -32,6 +40,25 @@ Utilize the "Docs" tab on the far right of the page to figure out the query you 
 }
 
 1. What is Dragonite resitant to? (bonus points for double resistance as well!)
+Answer: "doubleResistedTypes": [
+          "grass"
+        ],
+        "resistedTypes": [
+          "bug",
+          "fighting",
+          "fire",
+          "water"
+
+Code:{
+	getTypeMatchup(types: [dragon flying]) {
+		defending{
+     doubleResistedTypes
+      resistedTypes
+    }
+	}
+}
+
+
 1. What is the catch rate of Pidgeot? base:45
    {
 	getPokemon(pokemon: pidgeot reverseFlavorTexts: true takeFlavorTexts: 1){
